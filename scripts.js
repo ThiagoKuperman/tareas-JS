@@ -1,9 +1,9 @@
-let boca = prompt("ingrese VAMOS BOCA");
-let boca2 = prompt("diga por que club de futbol simpatiza");
-
-if((boca == "VAMOS BOCA") && (boca2 == "boca")){
-    console.log("FELICITACIONES USTED ES DE BOCA!!");
+function loopDePares (numero){
+    for(let i=1; i<=100; i++){
+        console.log(i)
+        let suma = i + numero
+        if (suma%2 == 0)
+		  console.log("El numero " + suma + " es par");
+    }
 }
-else{
-    console.log("usted es amargo. VAMOS BOCAAA!!!!")
-}
+//esta funcion te retorna todos los numeros del 1 al 100, y te dice cuales de esos sumados a la variable que agregaste es par

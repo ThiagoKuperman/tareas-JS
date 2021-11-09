@@ -1,4 +1,5 @@
 //tarea 3
+/*
 function loopDePares (numero){
     for(let i=1; i<=100; i++){
         console.log(i)
@@ -23,3 +24,15 @@ function middleCharacter(texto){
 }
 
 //esta funcion retorna la letra del medio de la palabra que pasen como parametro. Si la palabra no tiene letra central retorna las 2 letras del medio
+*/
+//tarea 5
+//calculadora de iva
+
+let valor = prompt("ingrese el valor del articulo");
+
+function iva(valor){
+    let iva = valor * 0.21;
+    let valorFinal = iva + valor;
+    console.log(valorFinal);
+    
+}

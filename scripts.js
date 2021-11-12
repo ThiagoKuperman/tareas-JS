@@ -24,7 +24,7 @@ function middleCharacter(texto){
 }
 
 //esta funcion retorna la letra del medio de la palabra que pasen como parametro. Si la palabra no tiene letra central retorna las 2 letras del medio
-*/
+
 //tarea 5
 //calculadora de iva
 
@@ -36,3 +36,21 @@ function iva(valor){
     console.log(valorFinal);
     
 }
+*/
+
+//tarea 6
+//objetos
+
+function Votacion (fecha, voto, hora){
+    this.fecha = fecha;
+    this.voto = voto;
+    this.hora = hora;
+}
+
+let fecha = prompt("ingrese la fecha de votacion");
+let voto = prompt("ingrese su voto");
+let hora = prompt("ingrese el horario de votacion");
+
+let voto1 = new Votacion (fecha, voto, hora);
+
+console.log(voto1);

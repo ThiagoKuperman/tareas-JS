@@ -55,7 +55,7 @@ let voto1 = new Votacion (fecha, voto, hora);
 
 console.log(voto1);
 
-*/
+
 
 //tarea 7
 //incorporar arrays
@@ -68,4 +68,102 @@ function nuevoArreglo(numero){
     return (arreglo);
 }
 //esta funcion agrega a un arreglo todos los numeros anteriores al que pases como parametro
+
+
+
+//tarea 7
+//ordenar un array de objetos
+
+
+var arregloNumeros = [75 , 125, 3, 44, 12, 56];
+
+arregloNumeros.sort(function(a, b){return b - a});
+
+console.log(arregloNumeros)
+
+*/
+
+//primera pre-entrega
+
+//variables
+
+let cart = [];
+const selectedQty = 'Cuanta cantidad desea llevar?';
+let resp = 'si';
+
+let products = [
+    { id:"1", name:"Microscopio digital", price:50000, stock:2 },
+    { id:"2", name:"Telescopio galileo", price:15000, stock:10 },
+    { id: "3", name: "binoculares 20x50", price:5000, stock:20 },
+];
+
+
+//mostrar los elementos dentro de el objeto products
+
+const elements = () =>{
+    let element = "Escoge un producto \n";
+    products.forEach((product)=>{
+        element += product.id + ".-" + product.name + "\n"
+    });
+    element += (products.length + 1) + ".-Salir";
+    let opt = parseInt(prompt(element));
+    return opt;
+};
+
+//saber si hay stock o no
+
+const stockSuficiente = (cantidad , stock ) => {
+    if(cantidad > stock){
+        alert(`No tenemos suficiente stock, el disponible es ${stock}`);
+        return false;
+    }
+    return true;
+}
+
+//agregar producto al carrito
+
+const addCart = ( opcion, cantid ) => {
+    const found = products.find(product => product.id === opcion.toString());
+    if(stockSuficiente(cantid, found.stock)){
+        let item = {
+            cantidad: cantid,
+            price:found.price * cantid,
+            name: found.name,
+        }
+        cart.push(item);
+        products[opcion - 1].stock -= cantid;
+        alert(`${found.name} fueron agregados al carrito`)
+    }
+};
+
+//mostrar el total
+
+const showTotal = () => {
+    let dataToShow = "";
+    let total = 0;
+    cart.forEach(product => {
+        dataToShow += `Producto: ${product.name} Cantidad: ${product.cantidad} Precio: ${product.price} \n`;
+        total += product.price
+    })
+    dataToShow += `Total: ${total}`;
+    alert(dataToShow);
+}
+
+//main
+alert("Bienvenidos, ¡Esta pagina es sobre Ciencia y te ayudará a comprar elementos de lo que se te ocurra!");
+
+do{
+    let opcion = elements();
+    if(opcion === (products.length + 1)){
+        break;
+    }
+
+    let cantid = parseInt(prompt(selectedQty));
+    addCart(opcion,cantid);
+    
+    resp = prompt("Desea continuar comprando? si / no");
+
+}while(resp === 'si');
+
+if(cart.length > 0) showTotal();
 

@@ -4,13 +4,6 @@
   padding: 0;
   margin: 0;
 }
-h1{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: large;
-    color: crimson;
-}
-p{
-    font: large;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: indigo;
+body{
+  background-color: palevioletred;
 }

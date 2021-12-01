@@ -169,7 +169,7 @@ if(cart.length > 0) showTotal();
 
 */
 //tarea DOM
-function accionParaCuandosDigaQueSi(){
+function accionParaCuandoDigaQueSi(){
     alert('muchas gracias, era la respuesta que esperaba<3');
 }
 

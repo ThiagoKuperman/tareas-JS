@@ -168,9 +168,16 @@ do{
 if(cart.length > 0) showTotal();
 
 */
-//tarea DOM
-function accionParaCuandoDigaQueSi(){
-    alert('muchas gracias, era la respuesta que esperaba<3');
+//tarea DOM y eventos
+
+document.getElementById("btnSi").addEventListener("click", accionSi);
+
+function accionSi(){
+    //generar HTML
+    let texto1 = document.createElement("h1");
+    texto1.textContent = 'muchas gracias, era la respuesta que esperaba<3';
+   
+    document.body.appendChild(texto1)
 }
 
 function mueveElBoton(){

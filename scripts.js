@@ -167,7 +167,7 @@ do{
 
 if(cart.length > 0) showTotal();
 
-*/
+
 //tarea DOM y eventos
 
 document.getElementById("btnSi").addEventListener("click", accionSi);
@@ -193,4 +193,24 @@ function mueveElBoton(){
     
 
 }
+*/
+
+let urlHP = "http://hp-api.herokuapp.com/api/characters";
+
+$("#api").click(function(){
+
+
+  $.get( urlHP , function(datos){
+      for(let personajes of datos){
+          $("#container").append(`
+                 <div>
+                    <h3> ${personajes.name} </h3>
+                    <img src="${personajes.image}"></img>
+                 </div>    
+                `
+          )
+      }
+      
+  })
+})
 
